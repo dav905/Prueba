@@ -40,7 +40,7 @@ public class PaginaRegistro extends Base {
 		click(registerLinkLocator);
 		Thread.sleep(2000);
 		if (isDisplayed(registerPage2Locator)) {
-            type("kiplin5@gmail.com",emailLocator);
+            type("kiplin12@gmail.com",emailLocator);
             click(registerBtnLocator);
             
             timeWait();
