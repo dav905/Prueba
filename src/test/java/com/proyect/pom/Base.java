@@ -10,17 +10,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Base {
 	
-	private WebDriver driver;
+	private WebDriver driver;// declaramos el objeto
 	
-	//creamos el contructor
+	//creamos el contructor con el objeto webdriver q acabamos de declarar
 	
 	public Base(WebDriver driver) {
 		this.driver = driver;
 	}
 	
 	// para llamar chrome driver para la automatizacion
-	
-	public WebDriver chrimeDriverConection() {
+	// es public WebDriver por q se va a regresar un objeto del tipo WebDriver
+	public WebDriver chrimeDriverConection() {//este es el metodo para la conexion con el navegador
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		return driver;

@@ -56,8 +56,10 @@ public class PaginaCompras extends Base{
 	            click(viewOrders);
 
 	            //assertTrue(isDisplayed(orders));
-
-	            
+            
+	        }
+	        else {
+	        	System.out.println("No se encontro pagina de registro");
 	        }
 	}
 	

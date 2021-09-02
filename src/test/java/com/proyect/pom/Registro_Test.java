@@ -9,13 +9,13 @@ import org.openqa.selenium.WebDriver;
 
 public class Registro_Test {
 	
-	private WebDriver driver;
-	PaginaRegistro paginaRegistro;
+	private WebDriver driver;//declaremos el webdriver
+	PaginaRegistro paginaRegistro;//declaramos un objero de la pagina registro para traer los metos de esa pagina
 
 	@Before
 	public void setUp() throws Exception {
 		paginaRegistro = new PaginaRegistro(driver);
-		driver = paginaRegistro.chrimeDriverConection();
+		driver = paginaRegistro.chrimeDriverConection();// aqui llamamos el metodo donde creamos la conexion xon el chrome driver
 		paginaRegistro.visit("http://automationpractice.com/index.php");
 	}
 

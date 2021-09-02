@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TestPagecomentarios {
 
-    private WebDriver driver;// importa la libreria selenium de webdriver
+    private WebDriver driver;// se cdeclara objeto Webdriver importa la libreria selenium de webdriver
     
     //test1
     By registerLinkLocator = By.linkText("Sign in");
@@ -68,9 +68,9 @@ public class TestPagecomentarios {
     By sendLocator = By.xpath("//*[@id=\"submitMessage\"]");
     By confirmSendLocator = By.xpath("//*[@id=\"center_column\"]/p");
 
-    @Before
+    @Before //son anotaciones para traer intrucciones y librerias concretas de junit
     public void setUp() { //metodo que crea los condiciones iniciales
-
+    	// Seteo el driver de chrome para utilizar dicho navegador en los tests
         System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");//seteamos las propiedades,
         driver = new ChromeDriver(); //declaramos el objeto driver pero para q funcione tenemos q decimos donde esta el ejecutable
         driver.manage().window().maximize();
@@ -93,7 +93,7 @@ public class TestPagecomentarios {
             driver.findElement(registerBtnLocator).click();
             
             
-            driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);//hace una espera
             
             WebElement listState=driver.findElement(state);//creamos un elemento que apunta a la lista
 	          //XXXXXXXXXXcreate an object to "select" class and pass select drop down element as an argument.
@@ -116,8 +116,8 @@ public class TestPagecomentarios {
             
             //assertTrue(driver.findElement(welcomeLocator).isDisplayed());	XXXXXXXXXXXXXXX
             
-            //assertEquals("Login - My Store", driver.getTitle());
-            //assertTrue(driver.findElement(loginPageLocator).isDisplayed());
+            //assertEquals("Login - My Store", driver.getTitle());//obtiene el titulo y compra que sea igual al texto "Login - My Store"
+            //assertTrue(driver.findElement(loginPageLocator).isDisplayed()); //si detecta el elmento ya lo muestra entonces es true cumple
 
         } else {
             System.out.print("No encontro pagina de registro");

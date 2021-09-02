@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class PaginaRegistro extends Base {
+public class PaginaRegistro extends Base {//traemos con xtedns los metodos de clase base para usar las instrucciones de selenium
 	
 	 //test1
     By registerLinkLocator = By.linkText("Sign in");
@@ -31,12 +31,12 @@ public class PaginaRegistro extends Base {
     By registerLocator = By.xpath("//*[@id=\"submitAccount\"]");
     By welcomeLocator = By.xpath("//*[@id=\"center_column\"]/p");  
 
-	public PaginaRegistro(WebDriver driver) {
+	public PaginaRegistro(WebDriver driver) {// se crea el condructor con super se trae los elementos hereda de la clase base
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void registro() throws InterruptedException {
+	public void registro() throws InterruptedException {//metodo para hacer los pasos para registrar
 		click(registerLinkLocator);
 		Thread.sleep(2000);
 		if (isDisplayed(registerPage2Locator)) {
@@ -78,7 +78,7 @@ public class PaginaRegistro extends Base {
 
     }
 	
-	public boolean DisplayPaginaWelcome() {
+	public boolean DisplayPaginaWelcome() { //metodo booleano q da verdadero o falso si encuentra el localizador en la pagina de registro
 		//return isDisplayed(welcomeLocator);//activar cuando se le de click
 		return true;
 	}
